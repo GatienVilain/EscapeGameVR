@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class TargetController : MonoBehaviour
 {
+    [SerializeField] private Animator door_ANIM;
     IEnumerator ExecuteAfterTime(float time)
     {
         yield return new WaitForSeconds(time);
         hasEntered = false;
         Debug.Log("hasEntered reset");
+        door_ANIM.SetTrigger("TriggerCloseDoor");
         // Code to execute after the delay
     }
 
@@ -19,6 +21,7 @@ public class TargetController : MonoBehaviour
         if (!hasEntered && collision.gameObject.layer == LayerMask.NameToLayer("Bullet"))
         {
             Debug.Log("Cible touchée");
+            door_ANIM.SetTrigger("TriggerOpenDoor");
             hasEntered = true;
             StartCoroutine(ExecuteAfterTime(10));
         }
