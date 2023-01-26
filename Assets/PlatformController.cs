@@ -8,6 +8,8 @@ public class PlatformController : MonoBehaviour
 {
 
     [SerializeField] private Material newMaterial;
+    [SerializeField] private Vector3 pistolPosition;
+    [SerializeField] private GameObject pistolPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +30,8 @@ public class PlatformController : MonoBehaviour
             if (collision.gameObject.GetComponent<Renderer>().sharedMaterial == this.gameObject.GetComponent<Renderer>().sharedMaterial)
 
             {
-                Destroy(this.gameObject);
+                //Destroy(this.gameObject);
+                Instantiate(pistolPrefab, pistolPosition, Quaternion.identity);
             }
             else
             {
