@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f7f70f1815dd53469923a60429c7d10, type: 3}
+  m_Name: LD_Main_Set
+  m_EditorClassIdentifier: 
+  wallLength: 1
+  wall_I: {fileID: 559682800393620245, guid: 14fba8b2c98502f4bb1d4f0386206eb0, type: 3}
+  wall_L: {fileID: 2491468853336758386, guid: 54715bae0ae09a44fbbc81c88f9b8e81, type: 3}
+  wall_T: {fileID: 4782808799700369297, guid: afb3f34f8a576a34a8e0292ca4fafca2, type: 3}
+  wall_X: {fileID: 976559022151085196, guid: ac2328ebc21c5fc4b88a012c28ea0c4e, type: 3}
+  wall_Caps:
+  - {fileID: 3815538449300295383, guid: 3bf1dbdc574f63d4189cab88b0751f76, type: 3}
+  - {fileID: 849169209817591631, guid: 242e692bd07148c4fbdcf74e21448295, type: 3}
+  floors:
+  - floorPrefab: {fileID: 2554577193342071552, guid: c5a6408687f4a6642b89fd6ea8b7b302,
+      type: 3}
+    size: 2
+  - floorPrefab: {fileID: 2560113517952898629, guid: 4cf599942c7e83e4bbc35b67a488e70a,
+      type: 3}
+    size: 2
+  - floorPrefab: {fileID: 4950074534912331322, guid: 2a4ce19af6db7aa4db129244dda70e5c,
+      type: 3}
+    size: 4
