@@ -148,7 +148,7 @@ public class BowStringController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Hand"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Hand"))
         {
             //Check which hand is trying to grab the bow to set correctly the
             //attach point so that the hand is correctly positionned

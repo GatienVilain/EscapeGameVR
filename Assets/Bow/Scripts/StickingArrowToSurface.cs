@@ -11,21 +11,20 @@ public class StickingArrowToSurface : MonoBehaviour
     IEnumerator DestroyArrow()
     {
         yield return new WaitForSeconds(3);
-
-        Destroy(gameObject);
+        Destroy(gameObject);        
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.attachedRigidbody != null && collision.collider.gameObject.layer == LayerMask.NameToLayer("target"))
+        if(collision.collider.gameObject.layer == LayerMask.NameToLayer("Target"))
         {
+            Debug.Log("Collision Target");
             rb.isKinematic = true;
             myCollider.isTrigger = true;
-
             GameObject arrow = Instantiate(strickingArrow);
             arrow.transform.position = transform.position;
             arrow.transform.forward = transform.forward;
-            arrow.transform.parent = collision.collider.attachedRigidbody.transform;
+            arrow.transform.parent = collision.gameObject.transform;
 
             collision.collider.GetComponent<IHittable>()?.GetHit();
 
