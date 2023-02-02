@@ -18707,6 +18707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 2086242983}
   speed: 2
+  sizeDecrementValue: 0.5
 --- !u!1 &2100011980
 GameObject:
   m_ObjectHideFlags: 0
