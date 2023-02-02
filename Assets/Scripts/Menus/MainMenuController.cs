@@ -3,12 +3,22 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField] private string levelToLoad;
+    [SerializeField] private GameObject levelWindow;
     [SerializeField] private GameObject settingsWindow;
 
-    public void StartGame()
+    public void GetLevelsWindow()
+    {
+        levelWindow.SetActive(true);
+    }
+
+    public void LoadLevel(string levelToLoad)
     {
         SceneManager.LoadScene(levelToLoad);
+    }
+
+    public void CloseLevelsWindow()
+    {
+        settingsWindow.SetActive(false);
     }
 
     public void GetSettings()

@@ -6,78 +6,61 @@ using TMPro;
 
 public class SettingsMenuController : MonoBehaviour
 {
-    [SerializeField] private TMP_Dropdown resolutionDropdown;
-    [SerializeField] private Toggle fullScreenTogggle;
     [SerializeField] private Slider volumeSlider;
     [SerializeField] private AudioMixer audioMixer = default;
 
-    private Resolution[] resolutions;
-
+    // private enum MixerGroups {
+    //     Master = "mainVolume",
+    //     Music = "MusicVolume",
+    //     Sound = "SoundVolume"
+    // }
 
     public void Start()
     {
-        PutResolutionValue();
-        ChangeFullScreenValue();
-        ChangeVolume();
-    }
-
-    // Change the resolution of the game window.
-    // It takes as a parameter the index of the desired resolution in the list of available resolutions.
-    public void SetResolution(int resolutionIndex)
-    {
-        Resolution resolution = resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-    }
-
-    // Change the full screen state of the game.
-    public void SetFullScreen(bool isFullScreen)
-    {
-        Screen.fullScreen = isFullScreen;
+        ChangeMainVolume();
+        ChangeMusicVolume();
+        ChangeSoundVolume();
     }
 
     // Change the main volume of the game.
-    public void SetVolume(float volume)
+    public void SetMainVolume(float volume)
     {
         audioMixer.SetFloat("mainVolume", volume);
     }
 
-    // Gets all available resolutions and selects current one.
-    private void PutResolutionValue()
+    // Change the music volume of the game.
+    public void SetMusicVolume(float volume)
     {
-        resolutions = Screen.resolutions;
-        resolutionDropdown.ClearOptions();
-
-        // Converts the resolution list into a string list.
-        int currentResolutionIndex = 0;
-        List<string> options = new List<string>();
-        for (int i = 0; i < resolutions.Length; i++)
-        {
-            string option = resolutions[i].width +  " x " + resolutions[i].height;
-            options.Add(option);
-
-            // Gets the current resolution index.
-            if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
-            {
-                currentResolutionIndex = i;
-            }
-        }
-
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
+        audioMixer.SetFloat("musicVolume", volume);
     }
 
-    // Gets the full monitor status and displays it on the UI.
-    private void ChangeFullScreenValue()
+    // Change the sound volume of the game.
+    public void SetSoundVolume(float volume)
     {
-        fullScreenTogggle.isOn =  Screen.fullScreen;
+        audioMixer.SetFloat("soundVolume", volume);
     }
 
     // Gets the main volume value and displays it on the UI
-    private void ChangeVolume()
+    private void ChangeMainVolume()
     {
         float volume;
         audioMixer.GetFloat("mainVolume", out volume);
+        volumeSlider.value = volume;
+    }
+
+    // Gets the main volume value and displays it on the UI
+    private void ChangeMusicVolume()
+    {
+        float volume;
+        audioMixer.GetFloat("musicVolume", out volume);
+        volumeSlider.value = volume;
+    }
+
+    // Gets the main volume value and displays it on the UI
+    private void ChangeSoundVolume()
+    {
+        float volume;
+        audioMixer.GetFloat("musicVolume", out volume);
         volumeSlider.value = volume;
     }
 }
