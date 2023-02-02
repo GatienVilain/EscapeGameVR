@@ -148,15 +148,15 @@ public class BowStringController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<XRDirectInteractor>() != null)
+        if (other.CompareTag("Hand"))
         {
             //Check which hand is trying to grab the bow to set correctly the
             //attach point so that the hand is correctly positionned
-            if (other.gameObject.name == "LeftHand Controller")
+            if (other.name.Contains("Left"))
             {
                 attachTransform.localPosition = new Vector3(0.1F, 0.15F, 0.2F);
             }
-            else if (other.gameObject.name == "RightHand Controller")
+            else if (other.name.Contains("Right"))
             {
                 attachTransform.localPosition = new Vector3(0.1F, -0.15F, 0.2F);
             }
