@@ -8,7 +8,6 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private GameObject mainCamera;
     [SerializeField] private GameObject levelWindow;
     [SerializeField] private GameObject settingsWindow;
-    private bool isSet = false;
 
     IEnumerator SetMenu()
     {
