@@ -80,7 +80,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
-    - _AlphaValue: 1
+    - _AlphaValue: 0
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0

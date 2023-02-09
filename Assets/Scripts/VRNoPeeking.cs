@@ -19,7 +19,7 @@ public class VRNoPeeking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Physics.CheckSphere(transform.position, sphereCheckSize, collisionLayer, QueryTriggerInteraction.Ignore))
+        if (Physics.CheckSphere(transform.position, sphereCheckSize, collisionLayer, QueryTriggerInteraction.Ignore))
         {
             CameraFade(1f);
             isCameraFadedOut = true;
