@@ -20,11 +20,7 @@ public class BowStringController : MonoBehaviour
     [SerializeField] private float stringSoundThreshold = 0.001f;
 
     public UnityEvent OnBowPulled;
-    public UnityEvent<float> OnBowReleased;
-
-    [SerializeField] private Transform attachTransform;
-
-    
+    public UnityEvent<float> OnBowReleased;    
 
     private void Awake()
     {
@@ -143,23 +139,6 @@ public class BowStringController : MonoBehaviour
         else
         {
             audioSource.Pause();
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Hand"))
-        {
-            //Check which hand is trying to grab the bow to set correctly the
-            //attach point so that the hand is correctly positionned
-            if (other.name.Contains("Left"))
-            {
-                attachTransform.localPosition = new Vector3(0.1F, 0.15F, 0.2F);
-            }
-            else if (other.name.Contains("Right"))
-            {
-                attachTransform.localPosition = new Vector3(0.1F, -0.15F, 0.2F);
-            }
         }
     }
 }
