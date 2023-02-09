@@ -606,6 +606,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3d0968538c3521949a70f972755c0949,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3d0968538c3521949a70f972755c0949,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6477940958727351939, guid: a8bbe1fb7ca3d5e4583d4030c7d59f90,
+        type: 3}
+    - target: {fileID: -7511558181221131132, guid: 3d0968538c3521949a70f972755c0949,
+        type: 3}
+      propertyPath: m_SelectedEditorRenderState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5754084199372789682, guid: 3d0968538c3521949a70f972755c0949,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -8023880443533065306, guid: a8bbe1fb7ca3d5e4583d4030c7d59f90,
+        type: 3}
     - target: {fileID: 919132149155446097, guid: 3d0968538c3521949a70f972755c0949,
         type: 3}
       propertyPath: m_Name
@@ -640,19 +662,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &959884926459718536
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264756805361922764}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2, z: 4}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &173345363007681787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,7 +743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders:
-  - {fileID: 959884926459718536}
+  - {fileID: 637801293866418777}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -836,6 +845,19 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!65 &637801293866418777
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264756805361922764}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.2, z: 5}
+  m_Center: {x: -0.2, y: 0, z: 0}
 --- !u!4 &641563136394438774 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3d0968538c3521949a70f972755c0949,
@@ -1436,3 +1458,34 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 9000562371444923008}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6629527887599576752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2371351598469479472, guid: 6d61b38f87e96d84c98472c062d3f85c,
+    type: 3}
+  m_PrefabInstance: {fileID: 9000562371444923008}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4916968586334591142
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6629527887599576752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.2, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3961661800060077005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6629527887599576752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c8e5ba0c772add4c94693c43b5f700f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
