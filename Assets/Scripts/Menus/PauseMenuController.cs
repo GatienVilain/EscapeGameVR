@@ -3,8 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuController : MonoBehaviour
 {
+    [SerializeField] private GameObject mainCamera = default;
     [SerializeField] private GameObject pauseWindow = default;
-    [SerializeField] private GameObject pauseOptionWindow = default;
     [SerializeField] private GameObject settingsWindow = default;
 
     public static bool gameIsPaused = false;
@@ -37,16 +37,22 @@ public class PauseMenuController : MonoBehaviour
     public void GetSettings()
     {
         settingsWindow.SetActive(true);
-        pauseOptionWindow.SetActive(false);
         inSettingsWindow = true;
     }
 
     // Exit the setting window.
     public void CloseSettingsWindow()
     {
-        pauseOptionWindow.SetActive(true);
         settingsWindow.SetActive(false);
         inSettingsWindow = false;
+    }
+
+
+    public void ResetMap()
+    {
+        Resume();
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
     }
 
     public void MoveToMainMenu()
@@ -69,8 +75,17 @@ public class PauseMenuController : MonoBehaviour
 
     public void Paused()
     {
+        SetMenuPosition();
         pauseWindow.SetActive(true);
         Time.timeScale = 0;
         gameIsPaused = true;
+    }
+
+    private void SetMenuPosition()
+    {
+        Vector3 position = new Vector3(mainCamera.transform.forward.x, -0.1f, mainCamera.transform.forward.z);
+        transform.position = mainCamera.transform.position + 2 * position;
+
+        transform.rotation = Quaternion.LookRotation(transform.position - mainCamera.transform.position);
     }
 }

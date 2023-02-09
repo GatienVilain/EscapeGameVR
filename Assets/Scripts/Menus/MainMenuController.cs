@@ -9,6 +9,24 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private GameObject levelWindow;
     [SerializeField] private GameObject settingsWindow;
 
+    private static bool inSettingsWindow = false;
+
+    void Start()
+    {
+        StartCoroutine(SetMenu());
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            if (inSettingsWindow)
+            {
+                CloseSettingsWindow();
+            }
+        }
+    }
+
     IEnumerator SetMenu()
     {
         yield return new WaitForSeconds(1);
@@ -16,11 +34,6 @@ public class MainMenuController : MonoBehaviour
         transform.position = mainCamera.transform.position + 2 * position;
 
         transform.rotation = Quaternion.LookRotation(transform.position - mainCamera.transform.position);
-    }
-
-    void Start()
-    {
-        StartCoroutine(SetMenu());
     }
 
     public void GetLevelsWindow()
@@ -41,12 +54,14 @@ public class MainMenuController : MonoBehaviour
     public void GetSettings()
     {
         settingsWindow.SetActive(true);
+        inSettingsWindow = true;
     }
 
     // Exit the setting window.
     public void CloseSettingsWindow()
     {
         settingsWindow.SetActive(false);
+        inSettingsWindow = false;
     }
 
     public void QuitGame()
