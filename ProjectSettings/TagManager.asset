@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Arrow
   layers:
   - Default
   - TransparentFX
@@ -11,11 +12,11 @@ TagManager:
   - Platform
   - Water
   - UI
-  - ColoredCube
-  - Bullet
-  - 
-  - 
-  - 
+  - Bow
+  - Arrow
+  - Hand
+  - Target
+  - NoPeekLayer
   - 
   - 
   - 
