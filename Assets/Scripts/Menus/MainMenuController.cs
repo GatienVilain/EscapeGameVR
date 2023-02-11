@@ -1,7 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEngine.GraphicsBuffer;
+using UnityEngine.XR;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class MainMenuController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if ( MenuButtonPressed() || Input.GetButtonDown("Cancel") )
         {
             if (inSettingsWindow)
             {
@@ -27,7 +28,8 @@ public class MainMenuController : MonoBehaviour
         }
     }
 
-    IEnumerator SetMenu()
+    // Set the menu in front of the camera and rotate it to face the camera.
+    private IEnumerator SetMenu()
     {
         yield return new WaitForSeconds(1);
         Vector3 position = new Vector3(mainCamera.transform.forward.x, -0.1f, mainCamera.transform.forward.z);
@@ -67,5 +69,25 @@ public class MainMenuController : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    private bool MenuButtonPressed()
+    {
+        // Get the left hand device.
+        var leftHandedControllers = new List<InputDevice>();
+        var desiredCharacteristics = InputDeviceCharacteristics.HeldInHand | InputDeviceCharacteristics.Left | InputDeviceCharacteristics.Controller;
+        InputDevices.GetDevicesWithCharacteristics(desiredCharacteristics, leftHandedControllers);
+
+        // Check if the primary button is pressed of any of the left hand devices.
+        foreach (var controller in leftHandedControllers)
+        {
+            if (controller.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButton) && primaryButton)
+            {
+                // If the primary button is pressed, don’t check the other controllers and return true.
+                return true;
+            }
+        }
+        // If the primary button is not pressed on any of the left hand devices, return false.
+        return false;
     }
 }

@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR;
 
 public class PauseMenuController : MonoBehaviour
 {
@@ -14,7 +16,7 @@ public class PauseMenuController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if ( MenuButtonPressed() || Input.GetButtonDown("Cancel") )
         {
             if (gameIsPaused)
             {
@@ -87,5 +89,25 @@ public class PauseMenuController : MonoBehaviour
         transform.position = mainCamera.transform.position + 2 * position;
 
         transform.rotation = Quaternion.LookRotation(transform.position - mainCamera.transform.position);
+    }
+
+    private bool MenuButtonPressed()
+    {
+        // Get the left hand device.
+        var leftHandedControllers = new List<InputDevice>();
+        var desiredCharacteristics = InputDeviceCharacteristics.HeldInHand | InputDeviceCharacteristics.Left | InputDeviceCharacteristics.Controller;
+        InputDevices.GetDevicesWithCharacteristics(desiredCharacteristics, leftHandedControllers);
+
+        // Check if the primary button is pressed of any of the left hand devices.
+        foreach (var controller in leftHandedControllers)
+        {
+            if (controller.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButton) && primaryButton)
+            {
+                // If the primary button is pressed, don’t check the other controllers and return true.
+                return true;
+            }
+        }
+        // If the primary button is not pressed on any of the left hand devices, return false.
+        return false;
     }
 }
