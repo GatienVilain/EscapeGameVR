@@ -10,7 +10,10 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private GameObject levelWindow;
     [SerializeField] private GameObject settingsWindow;
 
+    // This variable is used to check if the settings window is open.
     private static bool inSettingsWindow = false;
+     // This variable is used to check if the primary button of the left hand controller is pressed.
+    private static bool menuButtonIsPressed = false;
 
     void Start()
     {
@@ -71,6 +74,7 @@ public class MainMenuController : MonoBehaviour
         Application.Quit();
     }
 
+
     private bool MenuButtonPressed()
     {
         // Get the left hand device.
@@ -81,13 +85,23 @@ public class MainMenuController : MonoBehaviour
         // Check if the primary button is pressed of any of the left hand devices.
         foreach (var controller in leftHandedControllers)
         {
+            // If the primary button is pressed, don’t check the other controllers and return a value.
             if (controller.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButton) && primaryButton)
             {
-                // If the primary button is pressed, don’t check the other controllers and return true.
-                return true;
+                // As long as the button has not been released, return false.
+                if (menuButtonIsPressed){
+                    return false;
+                }
+                else // If it’s the first time the button is pressed or it has been released, return true.
+                {
+                    menuButtonIsPressed = true;
+                    return true;
+                }
             }
         }
+
         // If the primary button is not pressed on any of the left hand devices, return false.
+        menuButtonIsPressed = false;
         return false;
     }
 }
