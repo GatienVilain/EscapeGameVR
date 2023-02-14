@@ -2,12 +2,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class PauseMenuController : MonoBehaviour
 {
     [SerializeField] private GameObject mainCamera = default;
     [SerializeField] private GameObject pauseWindow = default;
     [SerializeField] private GameObject settingsWindow = default;
+
+    [SerializeField] GameObject xrOrigin;
+    [SerializeField] GameObject rightTeleportationRay;
+    [SerializeField] GameObject leftTeleportationRay;
+    [SerializeField] GameObject rightRayInteractor;
+    [SerializeField] GameObject leftRayInteractor;
 
     public static bool gameIsPaused = false;
 
@@ -76,6 +83,7 @@ public class PauseMenuController : MonoBehaviour
         pauseWindow.SetActive(false);
         Time.timeScale = 1;
         gameIsPaused = false;
+        ActivateTeleportation();
     }
 
     public void Paused()
@@ -84,6 +92,8 @@ public class PauseMenuController : MonoBehaviour
         pauseWindow.SetActive(true);
         Time.timeScale = 0;
         gameIsPaused = true;
+        DeactivateTeleportation();
+        
     }
 
     private void SetMenuPosition()
@@ -122,5 +132,25 @@ public class PauseMenuController : MonoBehaviour
         // If the primary button is not pressed on any of the left hand devices, return false.
         menuButtonIsPressed = false;
         return false;
+    }
+
+    private void ActivateTeleportation()
+    {
+        rightTeleportationRay.SetActive(true);
+        leftTeleportationRay.SetActive(true);
+        rightRayInteractor.SetActive(false);
+        leftRayInteractor.SetActive(false);
+        xrOrigin.GetComponent<TeleportationProvider>().enabled = true;
+        xrOrigin.GetComponent<ActionBasedSnapTurnProvider>().enabled = true;
+    }
+
+    private void DeactivateTeleportation()
+    {
+        rightTeleportationRay.SetActive(false);
+        leftTeleportationRay.SetActive(false);
+        rightRayInteractor.SetActive(true);
+        leftRayInteractor.SetActive(true);
+        xrOrigin.GetComponent<TeleportationProvider>().enabled = false;
+        xrOrigin.GetComponent<ActionBasedSnapTurnProvider>().enabled = false;
     }
 }
