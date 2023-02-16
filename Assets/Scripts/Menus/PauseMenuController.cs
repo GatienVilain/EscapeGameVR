@@ -26,7 +26,7 @@ public class PauseMenuController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if ( MenuButtonPressed() || Input.GetButtonDown("Cancel") )
+        if ( MenuButtonPressed() )
         {
             if (gameIsPaused)
             {
@@ -115,7 +115,7 @@ public class PauseMenuController : MonoBehaviour
         foreach (var controller in leftHandedControllers)
         {
             // If the primary button is pressed, don’t check the other controllers and return a value.
-            if (controller.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButton) && primaryButton)
+            if (controller.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButton) && secondaryButton)
             {
                 // As long as the button has not been released, return false.
                 if (menuButtonIsPressed){
