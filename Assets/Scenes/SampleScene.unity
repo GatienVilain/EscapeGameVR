@@ -27029,6 +27029,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2233326985386325013, guid: 9ed83f03243f69c4c8734da58b4d6c16,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233326985386325018, guid: 9ed83f03243f69c4c8734da58b4d6c16,
+        type: 3}
+      propertyPath: xrOrigin
+      value: 
+      objectReference: {fileID: 2086242980}
+    - target: {fileID: 2233326985386325018, guid: 9ed83f03243f69c4c8734da58b4d6c16,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 963194225}
+    - target: {fileID: 2233326985386325018, guid: 9ed83f03243f69c4c8734da58b4d6c16,
+        type: 3}
+      propertyPath: leftRayInteractor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233326985386325018, guid: 9ed83f03243f69c4c8734da58b4d6c16,
+        type: 3}
+      propertyPath: rightRayInteractor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233326985386325018, guid: 9ed83f03243f69c4c8734da58b4d6c16,
+        type: 3}
+      propertyPath: leftTeleportationRay
+      value: 
+      objectReference: {fileID: 633569645}
+    - target: {fileID: 2233326985386325018, guid: 9ed83f03243f69c4c8734da58b4d6c16,
+        type: 3}
+      propertyPath: rightTeleportationRay
+      value: 
+      objectReference: {fileID: 370988938}
     - target: {fileID: 2233326985386325019, guid: 9ed83f03243f69c4c8734da58b4d6c16,
         type: 3}
       propertyPath: m_Pivot.x

@@ -6,7 +6,9 @@ using TMPro;
 
 public class SettingsMenuController : MonoBehaviour
 {
-    [SerializeField] private Slider volumeSlider;
+    [SerializeField] private Slider mainVolumeSlider;
+    [SerializeField] private Slider musicVolumeSlider;
+    [SerializeField] private Slider soundVolumeSlider;
     [SerializeField] private AudioMixer audioMixer = default;
 
     // private enum MixerGroups {
@@ -45,7 +47,7 @@ public class SettingsMenuController : MonoBehaviour
     {
         float volume;
         audioMixer.GetFloat("mainVolume", out volume);
-        volumeSlider.value = volume;
+        mainVolumeSlider.value = volume;
     }
 
     // Gets the main volume value and displays it on the UI
@@ -53,14 +55,14 @@ public class SettingsMenuController : MonoBehaviour
     {
         float volume;
         audioMixer.GetFloat("musicVolume", out volume);
-        volumeSlider.value = volume;
+        musicVolumeSlider.value = volume;
     }
 
     // Gets the main volume value and displays it on the UI
     private void ChangeSoundVolume()
     {
         float volume;
-        audioMixer.GetFloat("musicVolume", out volume);
-        volumeSlider.value = volume;
+        audioMixer.GetFloat("soundVolume", out volume);
+        soundVolumeSlider.value = volume;
     }
 }
