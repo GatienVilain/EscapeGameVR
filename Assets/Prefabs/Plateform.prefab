@@ -110,3 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65902d12b31ec654986f6cf460f96f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newMaterial: {fileID: 2100000, guid: 9af26934c5fd86c4a8d35e4f9967bd96, type: 2}
+  arcPosition: {x: 3.383, y: 2.951, z: -2.206}
+  arcPrefab: {fileID: 264756805361922764, guid: 5770e6acf4262a64a92eb498c1cf34ed,
+    type: 3}
+  numberOfPlatform: 3
+  rotation: {x: 55.792015, y: 0, z: 0}
