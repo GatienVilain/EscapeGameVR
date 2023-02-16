@@ -8,17 +8,17 @@ public class DigicodeHandler : MonoBehaviour
     [SerializeField] private string correctCode = "1234";
     private string currentCode = "";
 
-    [SerializeField] private GameObject display;
+    [SerializeField] private GameObject displayText;
     private TextMeshProUGUI displayTextMechPro;
 
     [SerializeField] private AudioSource audioCorrectCode;
-    [SerializeField] private AudioSource audioIncorrectCode;
+    [SerializeField] private AudioSource audioWrongCode;
     
     
     // Start is called before the first frame update
     void Start()
     {
-        displayTextMechPro = display.GetComponent<TextMeshProUGUI>();
+        displayTextMechPro = displayText.GetComponent<TextMeshProUGUI>();
         UpdateDisplay();
     }
 
@@ -48,7 +48,7 @@ public class DigicodeHandler : MonoBehaviour
         else
         {
             displayTextMechPro.color = Color.red;
-            audioIncorrectCode.Play();
+            audioWrongCode.Play();
             //BEEEP code incorrect
         }
         yield return new WaitForSeconds(1);
