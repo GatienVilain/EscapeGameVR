@@ -6,34 +6,56 @@ using UnityEngine;
 public class DigicodeHandler : MonoBehaviour
 {
     [SerializeField] private string correctCode = "1234";
-    [SerializeField] private TextMeshPro display;
-    private string currentCode;
+    private string currentCode = "";
 
+    [SerializeField] private GameObject display;
+    private TextMeshProUGUI displayTextMechPro;
+
+    [SerializeField] private List<AudioSource> audioButtons = new List<AudioSource>(9);
+    [SerializeField] private AudioSource audioCorrectCode;
+    [SerializeField] private AudioSource audioIncorrectCode;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
-        currentCode = "";
+        displayTextMechPro = display.GetComponent<TextMeshProUGUI>();
+        UpdateDisplay();
     }
 
     private void UpdateDisplay()
     {
-
+        displayTextMechPro.text = currentCode;
     }
 
     public void PressButton(int number)
     {
+        //audioButtons[number].Play();
         currentCode += number.ToString();
+        UpdateDisplay();
         if (currentCode.Length == correctCode.Length)
         {
-            if (currentCode == correctCode)
-            {
-                //Code is correct
-            }
-            else
-            {
-                //BEEEP code incorrect
-            }
-            currentCode = "";
+            StartCoroutine(CheckCurrentCode());
         }
+    }
+
+    private IEnumerator CheckCurrentCode()
+    {
+        if (currentCode == correctCode)
+        {
+            displayTextMechPro.color = Color.green;
+            //audioCorrectCode.Play();
+            //Code is correct
+        }
+        else
+        {
+            displayTextMechPro.color = Color.red;
+            //audioIncorrectCode.Play();
+            //BEEEP code incorrect
+        }
+        yield return new WaitForSeconds(2);
+        currentCode = "";
+        UpdateDisplay();
+        displayTextMechPro.color = Color.white;
     }
 }

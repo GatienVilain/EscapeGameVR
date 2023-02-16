@@ -43,7 +43,6 @@ public class Taillevar : MonoBehaviour
         if(bas)
         {
             transform.position = new Vector3(transform.position.x, downPositionY, transform.position.z);
-            Debug.Log("test");
         }
 
 
