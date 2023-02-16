@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TargetController : MonoBehaviour
 {
-    [SerializeField] private Animator door_ANIM;
+    [SerializeField] Animator door_ANIM;
     IEnumerator ExecuteAfterTime(float time)
     {
         yield return new WaitForSeconds(time);
