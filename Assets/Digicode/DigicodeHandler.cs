@@ -11,7 +11,6 @@ public class DigicodeHandler : MonoBehaviour
     [SerializeField] private GameObject display;
     private TextMeshProUGUI displayTextMechPro;
 
-    [SerializeField] private List<AudioSource> audioButtons = new List<AudioSource>(9);
     [SerializeField] private AudioSource audioCorrectCode;
     [SerializeField] private AudioSource audioIncorrectCode;
     
@@ -30,7 +29,6 @@ public class DigicodeHandler : MonoBehaviour
 
     public void PressButton(int number)
     {
-        //audioButtons[number].Play();
         currentCode += number.ToString();
         UpdateDisplay();
         if (currentCode.Length == correctCode.Length)
@@ -44,16 +42,16 @@ public class DigicodeHandler : MonoBehaviour
         if (currentCode == correctCode)
         {
             displayTextMechPro.color = Color.green;
-            //audioCorrectCode.Play();
+            audioCorrectCode.Play();
             //Code is correct
         }
         else
         {
             displayTextMechPro.color = Color.red;
-            //audioIncorrectCode.Play();
+            audioIncorrectCode.Play();
             //BEEEP code incorrect
         }
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         currentCode = "";
         UpdateDisplay();
         displayTextMechPro.color = Color.white;
