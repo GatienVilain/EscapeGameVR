@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7080100811278950759}
   - component: {fileID: 7080100811278950752}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Button6Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,7 +256,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7080100811281509473}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2153839060219976916}
+        m_TargetAssemblyTypeName: DigicodeHandler, Assembly-CSharp
+        m_MethodName: PressButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7080100811291943985
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +390,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7080100811291943990}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2153839060219976916}
+        m_TargetAssemblyTypeName: DigicodeHandler, Assembly-CSharp
+        m_MethodName: PressButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7080100811545756427
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,7 +524,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7080100811545756424}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2153839060219976916}
+        m_TargetAssemblyTypeName: DigicodeHandler, Assembly-CSharp
+        m_MethodName: PressButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7080100811589867632
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +552,7 @@ GameObject:
   - component: {fileID: 7080100811589867639}
   - component: {fileID: 7080100811589867641}
   - component: {fileID: 7080100811589867642}
+  - component: {fileID: 2153839060219976916}
   m_Layer: 5
   m_Name: Digicode
   m_TagString: Untagged
@@ -663,6 +700,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2153839060219976916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7080100811589867632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a2e29d9f319b90459dbaf2a59a44ee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  correctCode: 1234
 --- !u!1 &7080100811748858099
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,7 +834,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7080100811748858096}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2153839060219976916}
+        m_TargetAssemblyTypeName: DigicodeHandler, Assembly-CSharp
+        m_MethodName: PressButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7080100811846534124
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,7 +925,7 @@ GameObject:
   - component: {fileID: 7080100811858589236}
   - component: {fileID: 7080100811858589237}
   m_Layer: 5
-  m_Name: text
+  m_Name: DisplayText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1107,7 +1169,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7080100812025085768}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2153839060219976916}
+        m_TargetAssemblyTypeName: DigicodeHandler, Assembly-CSharp
+        m_MethodName: PressButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7080100812146817567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,7 +1303,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7080100812146817564}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2153839060219976916}
+        m_TargetAssemblyTypeName: DigicodeHandler, Assembly-CSharp
+        m_MethodName: PressButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7080100812240842140
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,7 +1328,7 @@ GameObject:
   - component: {fileID: 7080100812240842113}
   - component: {fileID: 7080100812240842114}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Button4Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1377,7 +1463,7 @@ GameObject:
   - component: {fileID: 7080100812243042087}
   - component: {fileID: 7080100812243042080}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Button5Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1512,7 +1598,7 @@ GameObject:
   - component: {fileID: 7080100812411904265}
   - component: {fileID: 7080100812411904266}
   m_Layer: 5
-  m_Name: code
+  m_Name: Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1589,7 +1675,7 @@ GameObject:
   - component: {fileID: 7080100812479809615}
   - component: {fileID: 7080100812479809608}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Button1Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1724,7 +1810,7 @@ GameObject:
   - component: {fileID: 7080100812506884820}
   - component: {fileID: 7080100812506884821}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Button8Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1968,7 +2054,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7080100812508533431}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2153839060219976916}
+        m_TargetAssemblyTypeName: DigicodeHandler, Assembly-CSharp
+        m_MethodName: PressButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7080100812646503815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1981,7 +2079,7 @@ GameObject:
   - component: {fileID: 7080100812646503812}
   - component: {fileID: 7080100812646503813}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Button2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2291,7 +2389,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7080100812698128304}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2153839060219976916}
+        m_TargetAssemblyTypeName: DigicodeHandler, Assembly-CSharp
+        m_MethodName: PressButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7080100812726723150
 GameObject:
   m_ObjectHideFlags: 0
@@ -2436,7 +2546,7 @@ GameObject:
   - component: {fileID: 7080100812915519447}
   - component: {fileID: 7080100812915519440}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Button7Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2680,7 +2790,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7080100813107555121}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2153839060219976916}
+        m_TargetAssemblyTypeName: DigicodeHandler, Assembly-CSharp
+        m_MethodName: PressButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7080100813138554380
 GameObject:
   m_ObjectHideFlags: 0
@@ -2693,7 +2815,7 @@ GameObject:
   - component: {fileID: 7080100813138554481}
   - component: {fileID: 7080100813138554482}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Button9Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2828,7 +2950,7 @@ GameObject:
   - component: {fileID: 7080100813175092098}
   - component: {fileID: 7080100813175092099}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Button3Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
