@@ -16,6 +16,8 @@ public class PauseMenuController : MonoBehaviour
     [SerializeField] GameObject rightRayInteractor;
     [SerializeField] GameObject leftRayInteractor;
 
+    [SerializeField] GameObject ground;
+
     public static bool gameIsPaused = false;
 
     // This variable is used to check if the settings window is open.
@@ -26,7 +28,7 @@ public class PauseMenuController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if ( MenuButtonPressed() )
+        if (MenuButtonPressed())
         {
             if (gameIsPaused)
             {
@@ -93,7 +95,7 @@ public class PauseMenuController : MonoBehaviour
         Time.timeScale = 0;
         gameIsPaused = true;
         DeactivateTeleportation();
-        
+
     }
 
     private void SetMenuPosition()
@@ -118,7 +120,8 @@ public class PauseMenuController : MonoBehaviour
             if (controller.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButton) && secondaryButton)
             {
                 // As long as the button has not been released, return false.
-                if (menuButtonIsPressed){
+                if (menuButtonIsPressed)
+                {
                     return false;
                 }
                 else // If it’s the first time the button is pressed or it has been released, return true.
@@ -140,7 +143,8 @@ public class PauseMenuController : MonoBehaviour
         leftTeleportationRay.SetActive(true);
         rightRayInteractor.SetActive(false);
         leftRayInteractor.SetActive(false);
-        xrOrigin.GetComponent<TeleportationProvider>().enabled = true;
+        //xrOrigin.GetComponent<TeleportationProvider>().enabled = true;
+        ground.GetComponent<TeleportationArea>().enabled = true;
         xrOrigin.GetComponent<ActionBasedSnapTurnProvider>().enabled = true;
     }
 
@@ -150,7 +154,8 @@ public class PauseMenuController : MonoBehaviour
         leftTeleportationRay.SetActive(false);
         rightRayInteractor.SetActive(true);
         leftRayInteractor.SetActive(true);
-        xrOrigin.GetComponent<TeleportationProvider>().enabled = false;
+        //xrOrigin.GetComponent<TeleportationProvider>().enabled = false;
+        ground.GetComponent<TeleportationArea>().enabled = false;
         xrOrigin.GetComponent<ActionBasedSnapTurnProvider>().enabled = false;
     }
 }

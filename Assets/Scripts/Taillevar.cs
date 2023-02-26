@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,8 @@ public class Taillevar : MonoBehaviour
     private bool vershaut;
     private float downPositionY;
     private float originalPositionY;
+
+    private bool potionGrabbed = false;
 
     [SerializeField] private Transform rightHand;
     [SerializeField] private Transform leftHand;
@@ -36,6 +39,16 @@ public class Taillevar : MonoBehaviour
         downPositionY = transform.position.y - sizeDecrementValue;
     }
 
+    public void activatePotion()
+    {
+        potionGrabbed = true;
+    }
+
+    public void deactivatePotion()
+    {
+        potionGrabbed = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -46,9 +59,8 @@ public class Taillevar : MonoBehaviour
         }
 
 
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1") && potionGrabbed)
         {
-
             if (!(bas))
             {
                 versbas=true;
@@ -115,7 +127,7 @@ public class Taillevar : MonoBehaviour
         }
 
 
-
+        
             
         
     }
