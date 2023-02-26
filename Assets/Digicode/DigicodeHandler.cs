@@ -13,8 +13,10 @@ public class DigicodeHandler : MonoBehaviour
 
     [SerializeField] private AudioSource audioCorrectCode;
     [SerializeField] private AudioSource audioWrongCode;
-    
-    
+
+    [SerializeField] private Animator dropPotionAnim;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +46,8 @@ public class DigicodeHandler : MonoBehaviour
             displayTextMechPro.color = Color.green;
             audioCorrectCode.Play();
             //Code is correct
+
+            dropPotionAnim.SetTrigger("TriggerDropPotion");
         }
         else
         {
