@@ -85,7 +85,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &2233326985386325014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +142,7 @@ MonoBehaviour:
   leftTeleportationRay: {fileID: 0}
   rightRayInteractor: {fileID: 0}
   leftRayInteractor: {fileID: 0}
+  ground: {fileID: 0}
 --- !u!1001 &1282031085562422302
 PrefabInstance:
   m_ObjectHideFlags: 0
