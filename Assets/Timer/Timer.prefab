@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 4843546427421281130}
   - component: {fileID: 8710254756391519199}
   - component: {fileID: 3407073238535639063}
+  - component: {fileID: 4501268627145401345}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -161,7 +162,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &8710254756391519199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,6 +199,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
+--- !u!114 &4501268627145401345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4502970829586570582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6916ad1fc3f50bd4fa4c17e11d3a48f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  display: {fileID: 2458996630732515158}
 --- !u!1 &7705030786008834900
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,8 +299,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5456234945383287344}
   - component: {fileID: 3919716167263348652}
-  - component: {fileID: 2458996630732515158}
   - component: {fileID: 6757602345962828948}
+  - component: {fileID: 2458996630732515158}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -322,6 +336,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8286894501135476697}
   m_CullTransparentMesh: 1
+--- !u!114 &6757602345962828948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8286894501135476697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6916ad1fc3f50bd4fa4c17e11d3a48f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  display: {fileID: 0}
 --- !u!114 &2458996630732515158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,15 +438,3 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &6757602345962828948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8286894501135476697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6916ad1fc3f50bd4fa4c17e11d3a48f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -10,13 +10,12 @@ public class TimerHandler : MonoBehaviour
     private int minutes = 0;
     private int seconds = 0;
     private bool isRunning = true;
-    private TextMeshProUGUI display;
+    [SerializeField] private TextMeshProUGUI display;
 
 
-    // Start is called before the first frame update
-    private void Start()
+    private void Awake()
     {
-        display = gameObject.GetComponent<TextMeshProUGUI>();
+        DontDestroyOnLoad(this);
     }
 
     // Update is called once per frame
@@ -30,7 +29,7 @@ public class TimerHandler : MonoBehaviour
             {
                 seconds = currentSeconds;
                 minutes = Mathf.FloorToInt(currentTime / 60);
-                display.text = $"{minutes}:{seconds}";
+                display.text = $"{minutes:d2}:{seconds:d2}";
             }
         }
     }

@@ -16,6 +16,8 @@ public class PauseMenuController : MonoBehaviour
     [SerializeField] GameObject rightRayInteractor;
     [SerializeField] GameObject leftRayInteractor;
 
+    [SerializeField] TimerHandler timer;
+
     [SerializeField] GameObject ground;
 
     public static bool gameIsPaused = false;
@@ -84,6 +86,7 @@ public class PauseMenuController : MonoBehaviour
     {
         pauseWindow.SetActive(false);
         //Time.timeScale = 1;
+        timer.ResumeTimer();
         gameIsPaused = false;
         ActivateTeleportation();
     }
@@ -93,6 +96,7 @@ public class PauseMenuController : MonoBehaviour
         SetMenuPosition();
         pauseWindow.SetActive(true);
         //Time.timeScale = 0;
+        timer.PauseTimer();
         gameIsPaused = true;
         DeactivateTeleportation();
 
