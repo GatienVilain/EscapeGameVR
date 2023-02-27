@@ -2849,7 +2849,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &1745158354717808631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2899,9 +2899,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctCode: 1234
-  displayText: {fileID: 0}
+  displayText: {fileID: 1694270839280957569}
   audioCorrectCode: {fileID: 301517083933751290}
-  audioWrongCode: {fileID: 0}
+  audioWrongCode: {fileID: 5275164071690521440}
 --- !u!222 &6517229407389607455
 CanvasRenderer:
   m_ObjectHideFlags: 0
