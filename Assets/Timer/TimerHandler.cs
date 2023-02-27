@@ -9,7 +9,7 @@ public class TimerHandler : MonoBehaviour
     private int currentSeconds = 0;
     private int minutes = 0;
     private int seconds = 0;
-    private bool isFinished = false;
+    private bool isRunning = true;
     private TextMeshProUGUI display;
 
 
@@ -22,7 +22,7 @@ public class TimerHandler : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!isFinished)
+        if (isRunning)
         {
             currentTime += Time.deltaTime;
             currentSeconds = Mathf.FloorToInt(currentTime % 60);
@@ -35,14 +35,20 @@ public class TimerHandler : MonoBehaviour
         }
     }
 
-    public void SetFinished()
+    public void PauseTimer()
     {
-        isFinished = true;  
+        isRunning = false;  
     }
 
-    public void SetUnFinished()
+    public void ResumeTimer()
     {
-        isFinished = false;
+        isRunning = true;
+    }
+
+    public void ResetTimer()
+    {
+        currentTime = 0;
+        isRunning = true;
     }
 
     public int GetMinutes()

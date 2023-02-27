@@ -16,7 +16,7 @@ public class EndGame : MonoBehaviour
         text = gameObject.GetComponent<TextMeshProUGUI>();
         timerHandler = timer.GetComponent<TimerHandler>();
 
-        timerHandler.SetFinished();
+        timerHandler.PauseTimer();
         text.text = $"Félicitation, vous avez fini le jeu en {timerHandler.GetMinutes()} minutes et {timerHandler.GetSeconds()} secondes !";
     }
 }
