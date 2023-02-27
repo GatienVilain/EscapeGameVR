@@ -15,10 +15,10 @@ public class MainMenuController : MonoBehaviour
      // This variable is used to check if the primary button of the left hand controller is pressed.
     private static bool menuButtonIsPressed = false;
 
-    void Start()
-    {
-        StartCoroutine(SetMenu());
-    }
+    // void Start()
+    // {
+    //     StartCoroutine(SetMenu());
+    // }
 
     private void Update()
     {
@@ -32,14 +32,14 @@ public class MainMenuController : MonoBehaviour
     }
 
     // Set the menu in front of the camera and rotate it to face the camera.
-    private IEnumerator SetMenu()
-    {
-        yield return new WaitForSeconds(1);
-        Vector3 position = new Vector3(mainCamera.transform.forward.x, -0.1f, mainCamera.transform.forward.z);
-        transform.position = mainCamera.transform.position + 2 * position;
+    // private IEnumerator SetMenu()
+    // {
+    //     yield return new WaitForSeconds(1);
+    //     Vector3 position = new Vector3(mainCamera.transform.forward.x, -0.1f, mainCamera.transform.forward.z);
+    //     transform.position = mainCamera.transform.position + 2 * position;
 
-        transform.rotation = Quaternion.LookRotation(transform.position - mainCamera.transform.position);
-    }
+    //     transform.rotation = Quaternion.LookRotation(transform.position - mainCamera.transform.position);
+    // }
 
     public void GetLevelsWindow()
     {
