@@ -8,7 +8,8 @@ public class EndGame : MonoBehaviour
 {
     [SerializeField] private GameObject mainCamera;
 
-    private TimerHandler timerHandler;
+    [SerializeField] private SavedTime savedTime;
+    private float time;
 
     [SerializeField] private GameObject textObject;
     private TextMeshProUGUI text;
@@ -20,11 +21,11 @@ public class EndGame : MonoBehaviour
         StartCoroutine(SetEndMenu());
 
         text = textObject.GetComponent<TextMeshProUGUI>();
-        timerHandler = GameObject.Find("Timer").GetComponent<TimerHandler>();
+        time = savedTime.time;
 
-        timerHandler.PauseTimer();
+        
 
-        text.text = $"Félicitation, vous avez fini le jeu en {timerHandler.GetMinutes()} minutes et {timerHandler.GetSeconds()} secondes !";
+        text.text = $"Félicitation, vous avez fini le jeu en {Mathf.FloorToInt(time / 60)} minutes et {Mathf.FloorToInt(time % 60)} secondes !";
     }
 
     // Set the menu in front of the camera and rotate it to face the camera.

@@ -616,6 +616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
+  savedTime: {fileID: 11400000, guid: fedff9fc0ca443a4eadbfce0a195a836, type: 2}
   textObject: {fileID: 2558673463113558989}
 --- !u!1 &8577440061859538027
 GameObject:

@@ -11,6 +11,7 @@ public class TimerHandler : MonoBehaviour
     private int seconds = 0;
     private bool isRunning = true;
     [SerializeField] private TextMeshProUGUI display;
+    [SerializeField] private SavedTime timeSaved;
 
     // Update is called once per frame
     private void Update()
@@ -44,14 +45,9 @@ public class TimerHandler : MonoBehaviour
         isRunning = true;
     }
 
-    public int GetMinutes()
+    public void SaveTime()
     {
-        return minutes;
-    }
-
-    public int GetSeconds()
-    {
-        return seconds;
+        timeSaved.time = currentTime;
     }
 
 }
