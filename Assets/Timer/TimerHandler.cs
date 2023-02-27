@@ -40,6 +40,11 @@ public class TimerHandler : MonoBehaviour
         isFinished = true;  
     }
 
+    public void SetUnFinished()
+    {
+        isFinished = false;
+    }
+
     public int GetMinutes()
     {
         return minutes;
