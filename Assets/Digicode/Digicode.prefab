@@ -909,7 +909,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2558874959017162915, guid: 50a3da7a9c12cde4c942737f1acd0f0c,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: f80c91b07068ab748a382bf1d13ea547, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1231,7 +1231,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2558874959017162915, guid: 50a3da7a9c12cde4c942737f1acd0f0c,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 0db44cc4f43ec6b4db74e1a0dc3fdf43, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2849,7 +2849,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &1745158354717808631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4054,7 +4054,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2558874959017162915, guid: 50a3da7a9c12cde4c942737f1acd0f0c,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 5c40d2adf61bb5945aa8244e792b990c, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

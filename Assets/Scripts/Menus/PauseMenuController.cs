@@ -98,7 +98,7 @@ public class PauseMenuController : MonoBehaviour
 
     }
 
-    private void SetMenuPosition()
+    public void SetMenuPosition()
     {
         Vector3 position = new Vector3(mainCamera.transform.forward.x, -0.1f, mainCamera.transform.forward.z);
         transform.position = mainCamera.transform.position + 2 * position;
