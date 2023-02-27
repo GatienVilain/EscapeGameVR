@@ -15,10 +15,11 @@ public class MainMenuController : MonoBehaviour
      // This variable is used to check if the primary button of the left hand controller is pressed.
     private static bool menuButtonIsPressed = false;
 
-    // void Start()
-    // {
-    //     StartCoroutine(SetMenu());
-    // }
+    void Start()
+    {
+        settingsWindow.GetComponent<SettingsMenuController>().SetMainVolume(-50);
+        // StartCoroutine(SetMenu());
+    }
 
     private void Update()
     {

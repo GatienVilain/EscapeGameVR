@@ -7314,7 +7314,7 @@ PrefabInstance:
     - target: {fileID: 2765821721633052313, guid: dda99278950b796449f1c83e0d5a0078,
         type: 3}
       propertyPath: m_Name
-      value: Triple Flower (2)
+      value: Flower
       objectReference: {fileID: 0}
     - target: {fileID: 2765821721633052313, guid: dda99278950b796449f1c83e0d5a0078,
         type: 3}
