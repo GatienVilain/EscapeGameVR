@@ -2902,6 +2902,7 @@ MonoBehaviour:
   displayText: {fileID: 1694270839280957569}
   audioCorrectCode: {fileID: 301517083933751290}
   audioWrongCode: {fileID: 5275164071690521440}
+  dropPotionAnim: {fileID: 0}
 --- !u!222 &6517229407389607455
 CanvasRenderer:
   m_ObjectHideFlags: 0
