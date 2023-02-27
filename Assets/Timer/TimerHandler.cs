@@ -12,12 +12,6 @@ public class TimerHandler : MonoBehaviour
     private bool isRunning = true;
     [SerializeField] private TextMeshProUGUI display;
 
-
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
     // Update is called once per frame
     private void Update()
     {
