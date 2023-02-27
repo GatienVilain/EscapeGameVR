@@ -1,6 +1,8 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Taillevar : MonoBehaviour
 {
@@ -8,12 +10,21 @@ public class Taillevar : MonoBehaviour
     [SerializeField] private Transform cameraTransform;
     //[SerializeField] private float increment =0.6f;
     [SerializeField] private float speed =1f;
-    
+    [SerializeField] GameObject rightReticle;
+    [SerializeField] GameObject leftReticle;
+
+    [SerializeField] Vector3 sizeSmallReticle;
+    [SerializeField] Vector3 originalSizeReticle;
+
+    [SerializeField] GameObject tunnelGround;
+
     private bool bas;
     private bool versbas;
     private bool vershaut;
     private float downPositionY;
     private float originalPositionY;
+
+    private bool potionGrabbed = false;
 
     [SerializeField] private Transform rightHand;
     [SerializeField] private Transform leftHand;
@@ -36,6 +47,16 @@ public class Taillevar : MonoBehaviour
         downPositionY = transform.position.y - sizeDecrementValue;
     }
 
+    public void activatePotion()
+    {
+        potionGrabbed = true;
+    }
+
+    public void deactivatePotion()
+    {
+        potionGrabbed = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -46,17 +67,22 @@ public class Taillevar : MonoBehaviour
         }
 
 
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1") && potionGrabbed && !ExitAreaController.isInExitArea)
         {
-
             if (!(bas))
             {
                 versbas=true;
+                rightReticle.transform.localScale = sizeSmallReticle;
+                leftReticle.transform.localScale = sizeSmallReticle;
+                tunnelGround.GetComponent<TeleportationArea>().enabled = true;
             }
             else
             {
                 bas = false;
                 vershaut=true;
+                rightReticle.transform.localScale = originalSizeReticle;
+                leftReticle.transform.localScale = originalSizeReticle;
+                tunnelGround.GetComponent<TeleportationArea>().enabled = false;
             }
         }
 
@@ -115,7 +141,7 @@ public class Taillevar : MonoBehaviour
         }
 
 
-
+        
             
         
     }
