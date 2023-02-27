@@ -83,7 +83,7 @@ public class PauseMenuController : MonoBehaviour
     public void Resume()
     {
         pauseWindow.SetActive(false);
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
         gameIsPaused = false;
         ActivateTeleportation();
     }
@@ -92,7 +92,7 @@ public class PauseMenuController : MonoBehaviour
     {
         SetMenuPosition();
         pauseWindow.SetActive(true);
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         gameIsPaused = true;
         DeactivateTeleportation();
 
