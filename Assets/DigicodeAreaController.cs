@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AreaController : MonoBehaviour
+public class DigicodeAreaController : MonoBehaviour
 {
 
     [SerializeField] GameObject rightTeleportationRay;

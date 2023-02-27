@@ -36,7 +36,7 @@ public class ActivateTeleportationRay : MonoBehaviour
     {
         if(!PauseMenuController.gameIsPaused)
         {
-            if(AreaController.isInDigicodeArea)
+            if(DigicodeAreaController.isInDigicodeArea)
             {
                 rightRayController.SetActive(rightCancel.action.ReadValue<float>() == 0 && rightActivate.action.ReadValue<float>() > 0.1f && !overlay.GetComponent<VRNoPeeking>().IsCameraFadedOut());
                 leftRayController.SetActive(leftCancel.action.ReadValue<float>() == 0 && leftActivate.action.ReadValue<float>() > 0.1f && !overlay.GetComponent<VRNoPeeking>().IsCameraFadedOut());
