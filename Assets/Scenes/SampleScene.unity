@@ -33974,7 +33974,8 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6757602345962828948, guid: 086779bab6c3ff54fbf1920b10bd2126, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 086779bab6c3ff54fbf1920b10bd2126, type: 3}
 --- !u!114 &1769587117 stripped
 MonoBehaviour:

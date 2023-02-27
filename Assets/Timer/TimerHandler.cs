@@ -15,7 +15,7 @@ public class TimerHandler : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
