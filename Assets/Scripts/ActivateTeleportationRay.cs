@@ -20,7 +20,10 @@ public class ActivateTeleportationRay : MonoBehaviour
 
     [SerializeField] GameObject overlay;
 
-    
+    [SerializeField] GameObject rightRayController;
+    [SerializeField] GameObject leftRayController;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,8 +36,16 @@ public class ActivateTeleportationRay : MonoBehaviour
     {
         if(!PauseMenuController.gameIsPaused)
         {
-            rightTeleportation.SetActive(rightCancel.action.ReadValue<float>() == 0 && rightActivate.action.ReadValue<float>() > 0.1f && !overlay.GetComponent<VRNoPeeking>().IsCameraFadedOut());
-            leftTeleportation.SetActive(leftCancel.action.ReadValue<float>() == 0 && leftActivate.action.ReadValue<float>() > 0.1f && !overlay.GetComponent<VRNoPeeking>().IsCameraFadedOut());
+            if(DigicodeAreaController.isInDigicodeArea)
+            {
+                rightRayController.SetActive(rightCancel.action.ReadValue<float>() == 0 && rightActivate.action.ReadValue<float>() > 0.1f && !overlay.GetComponent<VRNoPeeking>().IsCameraFadedOut());
+                leftRayController.SetActive(leftCancel.action.ReadValue<float>() == 0 && leftActivate.action.ReadValue<float>() > 0.1f && !overlay.GetComponent<VRNoPeeking>().IsCameraFadedOut());
+            }
+            else
+            {
+                rightTeleportation.SetActive(rightCancel.action.ReadValue<float>() == 0 && rightActivate.action.ReadValue<float>() > 0.1f && !overlay.GetComponent<VRNoPeeking>().IsCameraFadedOut());
+                leftTeleportation.SetActive(leftCancel.action.ReadValue<float>() == 0 && leftActivate.action.ReadValue<float>() > 0.1f && !overlay.GetComponent<VRNoPeeking>().IsCameraFadedOut());
+            }
         }
     }
 }

@@ -18,11 +18,11 @@ TagManager:
   - Target
   - NoPeekLayer
   - ColoredCube
-  - 
-  - 
-  - 
-  - 
-  - 
+  - DigicodeArea
+  - Player
+  - ExitArea
+  - EndGameArea
+  - Window
   - 
   - 
   - 

@@ -4,26 +4,29 @@ using UnityEngine;
 
 public class TargetController : MonoBehaviour
 {
-    [SerializeField] Animator door_ANIM;
-    IEnumerator ExecuteAfterTime(float time)
-    {
-        yield return new WaitForSeconds(time);
-        hasEntered = false;
-        Debug.Log("hasEntered reset");
-        door_ANIM.SetTrigger("TriggerCloseDoor");
-        // Code to execute after the delay
-    }
-
+    [SerializeField] private Animator door_ANIM;
+    private static int numberOfTargetLeft;
     private bool hasEntered;
-    private void OnCollisionEnter(Collision collision) //Un appel par collision, donc si l'objet touche 6 autres objets, 6 appels à la méthode, onCollisionEnter2D fonctionne avec des rigidbody2D
+
+    private void Awake()
+    {
+        numberOfTargetLeft = 2;
+        hasEntered = false;
+    }
+    private void OnCollisionEnter(Collision collision) //Un appel par collision, donc si l'objet touche 6 autres objets, 6 appels ï¿½ la mï¿½thode, onCollisionEnter2D fonctionne avec des rigidbody2D
     {
 
         if (!hasEntered && collision.gameObject.layer == LayerMask.NameToLayer("Arrow"))
         {
-            Debug.Log("Cible touchée");
-            door_ANIM.SetTrigger("TriggerOpenDoor");
+            numberOfTargetLeft--;
+            if(numberOfTargetLeft == 0)
+            {
+                door_ANIM.SetTrigger("TriggerOpenDoor");
+            }
+            Debug.Log("Cible touchï¿½e");
+            
             hasEntered = true;
-            StartCoroutine(ExecuteAfterTime(10));
+            
         }
     }
 }
