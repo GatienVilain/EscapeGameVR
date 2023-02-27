@@ -30,7 +30,7 @@ public class TimerHandler : MonoBehaviour
             {
                 seconds = currentSeconds;
                 minutes = Mathf.FloorToInt(currentTime / 60);
-                display.text = minutes + ":" + seconds;
+                display.text = $"{minutes.ToString()}:{seconds.ToString()}";
             }
         }
     }
