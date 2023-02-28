@@ -25,7 +25,7 @@ public class EndGame : MonoBehaviour
 
         
 
-        text.text = $"Vous vous êtes échappés !.\n\nTemps : \n{Mathf.FloorToInt(time / 3600)}h {Mathf.FloorToInt((time % 3600) / 60)}min {Mathf.FloorToInt(time % 60)}sec";
+        text.text = $"Vous vous êtes échappés !\n\nTemps : \n{Mathf.FloorToInt(time / 3600)}h {Mathf.FloorToInt((time % 3600) / 60)}min {Mathf.FloorToInt(time % 60)}sec";
     }
 
     // Set the menu in front of the camera and rotate it to face the camera.
