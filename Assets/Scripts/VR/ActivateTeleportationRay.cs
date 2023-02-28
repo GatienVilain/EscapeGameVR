@@ -40,11 +40,14 @@ public class ActivateTeleportationRay : MonoBehaviour
             {
                 rightRayController.SetActive(rightCancel.action.ReadValue<float>() == 0 && rightActivate.action.ReadValue<float>() > 0.1f && !overlay.GetComponent<VRNoPeeking>().IsCameraFadedOut());
                 leftRayController.SetActive(leftCancel.action.ReadValue<float>() == 0 && leftActivate.action.ReadValue<float>() > 0.1f && !overlay.GetComponent<VRNoPeeking>().IsCameraFadedOut());
+                rightTeleportation.SetActive(false);
+                leftTeleportation.SetActive(false);
             }
             else
             {
                 rightTeleportation.SetActive(rightCancel.action.ReadValue<float>() == 0 && rightActivate.action.ReadValue<float>() > 0.1f && !overlay.GetComponent<VRNoPeeking>().IsCameraFadedOut());
                 leftTeleportation.SetActive(leftCancel.action.ReadValue<float>() == 0 && leftActivate.action.ReadValue<float>() > 0.1f && !overlay.GetComponent<VRNoPeeking>().IsCameraFadedOut());
+                rightRayController.SetActive(false); leftRayController.SetActive(false);
             }
         }
     }
