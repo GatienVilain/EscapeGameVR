@@ -7,6 +7,7 @@ public class TimerHandler : MonoBehaviour
 {
     private float currentTime = 0;
     private int currentSeconds = 0;
+    private int heures = 0;
     private int minutes = 0;
     private int seconds = 0;
     private bool isRunning = true;
@@ -23,8 +24,9 @@ public class TimerHandler : MonoBehaviour
             if (currentSeconds != seconds)  //Si une seconde s'est écoulé depuis la dernière mise à jour du texte, mettre à jour le timer
             {
                 seconds = currentSeconds;
-                minutes = Mathf.FloorToInt(currentTime / 60);
-                display.text = $"{minutes:d2}:{seconds:d2}";
+                heures = Mathf.FloorToInt(currentSeconds / 3600);
+                minutes = Mathf.FloorToInt((currentTime % 3600) / 60);
+                display.text = $"{heures:d2}:{minutes:d2}:{seconds:d2}";
             }
         }
     }
