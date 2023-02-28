@@ -1916,20 +1916,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndGame
       objectReference: {fileID: 0}
-    - target: {fileID: 8834578351922863475, guid: ffb64ce8235c37a4f9ad5d8a30dd4882,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8834578351922863475, guid: ffb64ce8235c37a4f9ad5d8a30dd4882,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8834578351922863475, guid: ffb64ce8235c37a4f9ad5d8a30dd4882,
-        type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffb64ce8235c37a4f9ad5d8a30dd4882, type: 3}
