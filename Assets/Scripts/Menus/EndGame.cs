@@ -25,7 +25,7 @@ public class EndGame : MonoBehaviour
 
         
 
-        text.text = $"Félicitation, vous avez fini le jeu en {Mathf.FloorToInt(time / 60)} minutes et {Mathf.FloorToInt(time % 60)} secondes !";
+        text.text = $"Vous vous êtes échappés !.\n\nTemps : \n{Mathf.FloorToInt(time / 60)}min {Mathf.FloorToInt(time % 60)}sec";
     }
 
     // Set the menu in front of the camera and rotate it to face the camera.
