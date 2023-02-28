@@ -16,6 +16,8 @@ public class PauseMenuController : MonoBehaviour
     [SerializeField] GameObject rightRayInteractor;
     [SerializeField] GameObject leftRayInteractor;
 
+    [SerializeField] TimerHandler timer;
+
     [SerializeField] GameObject ground;
 
     public static bool gameIsPaused = false;
@@ -84,6 +86,7 @@ public class PauseMenuController : MonoBehaviour
     {
         pauseWindow.SetActive(false);
         //Time.timeScale = 1;
+        timer.ResumeTimer();
         gameIsPaused = false;
         ActivateTeleportation();
     }
@@ -93,12 +96,13 @@ public class PauseMenuController : MonoBehaviour
         SetMenuPosition();
         pauseWindow.SetActive(true);
         //Time.timeScale = 0;
+        timer.PauseTimer();
         gameIsPaused = true;
         DeactivateTeleportation();
 
     }
 
-    private void SetMenuPosition()
+    public void SetMenuPosition()
     {
         Vector3 position = new Vector3(mainCamera.transform.forward.x, -0.1f, mainCamera.transform.forward.z);
         transform.position = mainCamera.transform.position + 2 * position;
