@@ -21,7 +21,7 @@ public class TimerHandler : MonoBehaviour
         {
             currentTime += Time.deltaTime;
             currentSeconds = Mathf.FloorToInt(currentTime % 60);
-            if (currentSeconds != seconds)  //Si une seconde s'est écoulé depuis la dernière mise à jour du texte, mettre à jour le timer
+            if (currentSeconds != seconds)  //Si une seconde s'est ï¿½coulï¿½ depuis la derniï¿½re mise ï¿½ jour du texte, mettre ï¿½ jour le timer
             {
                 seconds = currentSeconds;
                 heures = Mathf.FloorToInt(currentSeconds / 3600);
@@ -52,4 +52,8 @@ public class TimerHandler : MonoBehaviour
         timeSaved.time = currentTime;
     }
 
+    public string GetTime()
+    {
+        return display.text;
+    }
 }
