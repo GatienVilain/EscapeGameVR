@@ -5,6 +5,7 @@ using UnityEngine;
 public class TargetController : MonoBehaviour
 {
     [SerializeField] private Animator door_ANIM;
+    [SerializeField] private AudioSource doorOpenSound;
     private static int numberOfTargetLeft;
     private bool hasEntered;
 
@@ -22,6 +23,7 @@ public class TargetController : MonoBehaviour
             if(numberOfTargetLeft == 0)
             {
                 door_ANIM.SetTrigger("TriggerOpenDoor");
+                doorOpenSound.Play();
             }
             Debug.Log("Cible touch�e");
             

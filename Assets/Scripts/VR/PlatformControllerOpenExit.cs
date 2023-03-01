@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlatformControllerOpenExit : MonoBehaviour
 {
     [SerializeField] private Animator exitAnim;
+    [SerializeField] private AudioSource exitSound;
     private bool exitOpen;
 
     private void Awake()
@@ -23,6 +24,7 @@ public class PlatformControllerOpenExit : MonoBehaviour
                 Debug.Log("Open Exit");
                 exitAnim.SetTrigger("TriggerOpenExit");
                 exitOpen = true;
+                StartCoroutine(PlaySound());
             }
         }
     }
@@ -37,7 +39,14 @@ public class PlatformControllerOpenExit : MonoBehaviour
                 exitOpen = false;
                 Debug.Log("Close Exit");
                 exitAnim.SetTrigger("TriggerCloseExit");
+                StartCoroutine(PlaySound());
             }
         }
+    }
+
+    private IEnumerator PlaySound()
+    {
+        yield return new WaitForSeconds(0.5f);
+        exitSound.Play();
     }
 }
