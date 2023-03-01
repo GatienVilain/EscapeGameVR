@@ -25,7 +25,7 @@ public class EndGame : MonoBehaviour
 
         
 
-        text.text = $"Vous vous êtes échappés !\n\nTemps : \n{Mathf.FloorToInt(time / 3600)}h {Mathf.FloorToInt((time % 3600) / 60)}min {Mathf.FloorToInt(time % 60)}sec";
+        text.text = $"Vous vous Ãªtes Ã©chappÃ©s !\n\nTemps : \n{Mathf.FloorToInt(time / 3600)}h {Mathf.FloorToInt((time % 3600) / 60)}min {Mathf.FloorToInt(time % 60)}sec";
     }
 
     // Set the menu in front of the camera and rotate it to face the camera.
@@ -33,7 +33,7 @@ public class EndGame : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         Vector3 position = new Vector3(mainCamera.transform.forward.x, -0.1f, mainCamera.transform.forward.z);
-        transform.position = mainCamera.transform.position + 2 * position;
+        transform.position = mainCamera.transform.position + 3 * position;
 
         transform.rotation = Quaternion.LookRotation(transform.position - mainCamera.transform.position);
     }

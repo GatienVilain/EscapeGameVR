@@ -4,21 +4,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class PauseMenuController : MonoBehaviour
+public class EndPauseMenuController : MonoBehaviour
 {
     [SerializeField] private GameObject mainCamera = default;
     [SerializeField] private GameObject pauseWindow = default;
     [SerializeField] private GameObject settingsWindow = default;
-
-    [SerializeField] GameObject xrOrigin;
-    [SerializeField] GameObject rightTeleportationRay;
-    [SerializeField] GameObject leftTeleportationRay;
-    [SerializeField] GameObject rightRayInteractor;
-    [SerializeField] GameObject leftRayInteractor;
-
-    [SerializeField] TimerHandler timer;
-
-    [SerializeField] GameObject ground;
 
     [Header("Debug Settings")]
     [Tooltip("Open/Close the pause menu.")]
@@ -68,14 +58,6 @@ public class PauseMenuController : MonoBehaviour
         inSettingsWindow = false;
     }
 
-
-    public void ResetMap()
-    {
-        Resume();
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentSceneName);
-    }
-
     public void MoveToMainMenu()
     {
         Resume();
@@ -90,21 +72,14 @@ public class PauseMenuController : MonoBehaviour
     public void Resume()
     {
         pauseWindow.SetActive(false);
-        //Time.timeScale = 1;
-        timer.ResumeTimer();
         gameIsPaused = false;
-        ActivateTeleportation();
     }
 
     public void Paused()
     {
         SetMenuPosition();
         pauseWindow.SetActive(true);
-        //Time.timeScale = 0;
-        timer.PauseTimer();
         gameIsPaused = true;
-        DeactivateTeleportation();
-
     }
 
     public void SetMenuPosition()
@@ -144,27 +119,5 @@ public class PauseMenuController : MonoBehaviour
         // If the primary button is not pressed on any of the left hand devices, return false.
         menuButtonIsPressed = false;
         return false;
-    }
-
-    private void ActivateTeleportation()
-    {
-        rightTeleportationRay.SetActive(true);
-        leftTeleportationRay.SetActive(true);
-        rightRayInteractor.SetActive(false);
-        leftRayInteractor.SetActive(false);
-        //xrOrigin.GetComponent<TeleportationProvider>().enabled = true;
-        ground.GetComponent<TeleportationArea>().enabled = true;
-        xrOrigin.GetComponent<ActionBasedSnapTurnProvider>().enabled = true;
-    }
-
-    private void DeactivateTeleportation()
-    {
-        rightTeleportationRay.SetActive(false);
-        leftTeleportationRay.SetActive(false);
-        rightRayInteractor.SetActive(true);
-        leftRayInteractor.SetActive(true);
-        //xrOrigin.GetComponent<TeleportationProvider>().enabled = false;
-        ground.GetComponent<TeleportationArea>().enabled = false;
-        xrOrigin.GetComponent<ActionBasedSnapTurnProvider>().enabled = false;
     }
 }
