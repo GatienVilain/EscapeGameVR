@@ -18,6 +18,8 @@ public class Taillevar : MonoBehaviour
 
     [SerializeField] GameObject tunnelGround;
 
+    [SerializeField] private AudioSource drinkingSound;
+
     private bool bas;
     private bool versbas;
     private bool vershaut;
@@ -69,6 +71,8 @@ public class Taillevar : MonoBehaviour
 
         if(Input.GetButtonDown("Fire1") && potionGrabbed && !ExitAreaController.isInExitArea)
         {
+            drinkingSound.Play();
+
             if (!(bas))
             {
                 versbas=true;
