@@ -14,6 +14,7 @@ public class DigicodeHandler : MonoBehaviour
     [SerializeField] private AudioSource audioCorrectCode;
     [SerializeField] private AudioSource audioWrongCode;
     [SerializeField] private AudioSource openPotionTubeSound;
+    private bool soundAlreadyPlayed = false;
 
     [SerializeField] private Animator dropPotionAnim;
 
@@ -49,7 +50,7 @@ public class DigicodeHandler : MonoBehaviour
             //Code is correct
 
             dropPotionAnim.SetTrigger("TriggerDropPotion");
-            openPotionTubeSound.Play();
+            StartCoroutine(PlayOpenTubeSound());
         }
         else
         {
@@ -61,5 +62,15 @@ public class DigicodeHandler : MonoBehaviour
         currentCode = "";
         UpdateDisplay();
         displayTextMechPro.color = Color.white;
+    }
+
+    private IEnumerator PlayOpenTubeSound()
+    {
+        yield return new WaitForSeconds(1);
+        if (!soundAlreadyPlayed)
+        {
+            soundAlreadyPlayed = true;
+            openPotionTubeSound.Play();
+        }
     }
 }

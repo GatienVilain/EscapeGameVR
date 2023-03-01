@@ -46,7 +46,7 @@ public class PlatformControllerOpenExit : MonoBehaviour
 
     private IEnumerator PlaySound()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         exitSound.Play();
     }
 }
