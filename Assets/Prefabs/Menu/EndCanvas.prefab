@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2233326985386325013}
   - component: {fileID: 2233326985386325014}
   - component: {fileID: 2233326985386325015}
-  - component: {fileID: 2233326985386325018}
+  - component: {fileID: 5654721306274024665}
   m_Layer: 5
-  m_Name: RunningCanvas
+  m_Name: EndCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &2233326985386325014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,7 +122,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
---- !u!114 &2233326985386325018
+--- !u!114 &5654721306274024665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,19 +131,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2233326985386325011}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed8083017a802f0488e0cef6079d61ed, type: 3}
+  m_Script: {fileID: 11500000, guid: c5c11dc564150574eb22cecac7ee892b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
   pauseWindow: {fileID: 2233326984741131580}
   settingsWindow: {fileID: 6536731564708225361}
-  xrOrigin: {fileID: 0}
-  rightTeleportationRay: {fileID: 0}
-  leftTeleportationRay: {fileID: 0}
-  rightRayInteractor: {fileID: 0}
-  leftRayInteractor: {fileID: 0}
-  timer: {fileID: 0}
-  ground: {fileID: 0}
   callPauseMenu: 0
 --- !u!1001 &1282031085562422302
 PrefabInstance:
@@ -156,11 +149,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2233326985386325018}
+      objectReference: {fileID: 5654721306274024665}
+    - target: {fileID: 1095763897390339354, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763897390339354, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EndPauseMenuController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763897390339355, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763897390339355, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763897390339355, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763897390339355, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -217.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1095763897517797666, guid: 2873d5703c98eff4aa2f91c220614a20,
         type: 3}
       propertyPath: m_Name
       value: PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763897517797666, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1095763897517797693, guid: 2873d5703c98eff4aa2f91c220614a20,
         type: 3}
@@ -267,31 +295,146 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1095763898123710740, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763898123710740, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763898123710740, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763898123710740, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -682.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1095763898123710743, guid: 2873d5703c98eff4aa2f91c220614a20,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2233326985386325018}
+      objectReference: {fileID: 5654721306274024665}
+    - target: {fileID: 1095763898123710743, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763898123710743, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EndPauseMenuController, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1095763898288548177, guid: 2873d5703c98eff4aa2f91c220614a20,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2233326985386325018}
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763898288548182, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763898288548182, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763898288548182, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763898288548182, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -450
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763898288548183, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763898830511804, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763898830511804, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763898830511804, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763898830511804, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -372.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1095763898830511807, guid: 2873d5703c98eff4aa2f91c220614a20,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2233326985386325018}
+      objectReference: {fileID: 5654721306274024665}
+    - target: {fileID: 1095763898830511807, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GetSettings
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763898830511807, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EndPauseMenuController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763899382618040, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763899382618040, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763899382618040, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763899382618040, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -527.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1095763899382618043, guid: 2873d5703c98eff4aa2f91c220614a20,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2233326985386325018}
+      objectReference: {fileID: 5654721306274024665}
+    - target: {fileID: 1095763899382618043, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095763899382618043, guid: 2873d5703c98eff4aa2f91c220614a20,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EndPauseMenuController, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5439665291987510831, guid: 2873d5703c98eff4aa2f91c220614a20,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2233326985386325018}
+      objectReference: {fileID: 5654721306274024665}
     - target: {fileID: 5439665291987510831, guid: 2873d5703c98eff4aa2f91c220614a20,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -300,7 +443,7 @@ PrefabInstance:
     - target: {fileID: 5439665291987510831, guid: 2873d5703c98eff4aa2f91c220614a20,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PauseMenuController, Assembly-CSharp
+      value: EndPauseMenuController, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2873d5703c98eff4aa2f91c220614a20, type: 3}
