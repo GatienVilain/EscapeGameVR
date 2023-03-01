@@ -1,18 +1,12 @@
 fileFormatVersion: 2
-guid: dff3ce59f5470494a88f65292e5e7f54
+guid: b3177e619bf389b4eaf05c55b5ac2821
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - cameraTransform: {instanceID: 0}
-  - rightReticle: {instanceID: 0}
-  - leftReticle: {instanceID: 0}
-  - tunnelGround: {instanceID: 0}
-  - drinkingSound: {instanceID: 0}
   - isSittingSettings: {fileID: 11400000, guid: 8934c9fdc8c695e4b877516f83704db1,
       type: 2}
-  - rightHand: {instanceID: 0}
-  - leftHand: {instanceID: 0}
+  - text: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -20,6 +20,8 @@ public class Taillevar : MonoBehaviour
 
     [SerializeField] private AudioSource drinkingSound;
 
+    [SerializeField] isSittingScriptableObject isSittingSettings;
+
     private bool bas;
     private bool versbas;
     private bool vershaut;
