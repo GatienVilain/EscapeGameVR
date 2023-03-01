@@ -6,6 +6,7 @@ using UnityEngine.XR;
 
 public class MainMenuController : MonoBehaviour
 {
+    [SerializeField] private DefaultVolumeValues defaultVolumeValues;
     [SerializeField] private GameObject mainCamera;
     [SerializeField] private GameObject levelWindow;
     [SerializeField] private GameObject settingsWindow;
@@ -17,11 +18,15 @@ public class MainMenuController : MonoBehaviour
 
     void Start()
     {
-        // Définir les valeurs par défaut des volumes de son.
-        SettingsMenuController audioController = settingsWindow.GetComponent<SettingsMenuController>();
-        audioController.SetMainVolume(-20);
-        audioController.SetMusicVolume(-10);
-        audioController.SetSoundVolume(-10);
+        if (!defaultVolumeValues.isSetVolume)
+        {
+            // Définir les valeurs par défaut des volumes de son.
+            SettingsMenuController audioController = settingsWindow.GetComponent<SettingsMenuController>();
+            audioController.SetMainVolume(defaultVolumeValues.mainVolume);
+            audioController.SetMusicVolume(defaultVolumeValues.musicVolume);
+            audioController.SetSoundVolume(defaultVolumeValues.soundVolume);
+            defaultVolumeValues.isSetVolume = true;
+        }
 
         // StartCoroutine(SetMenu());
     }
@@ -78,6 +83,7 @@ public class MainMenuController : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+        defaultVolumeValues.isSetVolume = false;
     }
 
 
