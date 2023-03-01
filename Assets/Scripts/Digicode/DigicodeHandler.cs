@@ -48,9 +48,12 @@ public class DigicodeHandler : MonoBehaviour
             displayTextMechPro.color = Color.green;
             audioCorrectCode.Play();
             //Code is correct
-
-            dropPotionAnim.SetTrigger("TriggerDropPotion");
-            StartCoroutine(PlayOpenTubeSound());
+            if(dropPotionAnim != null)
+            {
+                dropPotionAnim.SetTrigger("TriggerDropPotion");
+                StartCoroutine(PlayOpenTubeSound());
+            }
+            
         }
         else
         {
