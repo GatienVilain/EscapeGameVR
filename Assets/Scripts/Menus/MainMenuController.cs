@@ -17,7 +17,7 @@ public class MainMenuController : MonoBehaviour
 
     void Start()
     {
-        settingsWindow.GetComponent<SettingsMenuController>().SetMainVolume(-50);
+        settingsWindow.GetComponent<SettingsMenuController>().SetMainVolume(-35);
         // StartCoroutine(SetMenu());
     }
 

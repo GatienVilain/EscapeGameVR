@@ -10857,11 +10857,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
-    - target: {fileID: 8615406716424687379, guid: e8b528495419fd444abbf56335a91488,
-        type: 3}
-      propertyPath: playNextMusic
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8717994845189932916, guid: e8b528495419fd444abbf56335a91488,
         type: 3}
       propertyPath: m_PlayOnAwake
