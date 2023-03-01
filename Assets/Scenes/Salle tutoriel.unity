@@ -2115,6 +2115,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Color Cube 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6407456783500385314, guid: 0e89eb4e7a634aa4b898a5ff43b43f41,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6407456783500385338, guid: 0e89eb4e7a634aa4b898a5ff43b43f41,
         type: 3}
       propertyPath: m_RootOrder
@@ -9801,6 +9806,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Color Cube 1 '
       objectReference: {fileID: 0}
+    - target: {fileID: 6407456783500385314, guid: 0e89eb4e7a634aa4b898a5ff43b43f41,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6407456783500385338, guid: 0e89eb4e7a634aa4b898a5ff43b43f41,
         type: 3}
       propertyPath: m_RootOrder
@@ -12320,6 +12330,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Color Cube 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407456783500385314, guid: 0e89eb4e7a634aa4b898a5ff43b43f41,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6407456783500385338, guid: 0e89eb4e7a634aa4b898a5ff43b43f41,
         type: 3}
