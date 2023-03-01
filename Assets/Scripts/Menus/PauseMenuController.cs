@@ -3,10 +3,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
+using TMPro;
 
 public class PauseMenuController : MonoBehaviour
 {
+    [SerializeField] private DefaultVolumeValues defaultVolumeValues;
     [SerializeField] private GameObject mainCamera = default;
+    [SerializeField] private TextMeshProUGUI timerText = default;
     [SerializeField] private GameObject pauseWindow = default;
     [SerializeField] private GameObject settingsWindow = default;
 
@@ -84,6 +87,7 @@ public class PauseMenuController : MonoBehaviour
 
     public void QuitGame()
     {
+        defaultVolumeValues.isSetVolume = false;
         Application.Quit();
     }
 
@@ -98,6 +102,7 @@ public class PauseMenuController : MonoBehaviour
 
     public void Paused()
     {
+        SetTimerValue();
         SetMenuPosition();
         pauseWindow.SetActive(true);
         //Time.timeScale = 0;
@@ -105,6 +110,11 @@ public class PauseMenuController : MonoBehaviour
         gameIsPaused = true;
         DeactivateTeleportation();
 
+    }
+
+    private void SetTimerValue()
+    {
+        timerText.text = timer.GetTime();
     }
 
     public void SetMenuPosition()

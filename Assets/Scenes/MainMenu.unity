@@ -2814,6 +2814,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 749c55e2ef7d6754da6289c8a2003f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultVolumeValues: {fileID: 11400000, guid: 9c8eb6798a0ad254cb57f478984de0c3,
+    type: 2}
   mainCamera: {fileID: 477007544}
   levelWindow: {fileID: 58188833}
   settingsWindow: {fileID: 2014689737}
@@ -11141,11 +11143,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AudioManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 8717994845189932916, guid: e8b528495419fd444abbf56335a91488,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8b528495419fd444abbf56335a91488, type: 3}

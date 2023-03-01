@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class EndPauseMenuController : MonoBehaviour
 {
+    [SerializeField] private DefaultVolumeValues defaultVolumeValues;
     [SerializeField] private GameObject mainCamera = default;
     [SerializeField] private GameObject pauseWindow = default;
     [SerializeField] private GameObject settingsWindow = default;
@@ -66,6 +67,7 @@ public class EndPauseMenuController : MonoBehaviour
 
     public void QuitGame()
     {
+        defaultVolumeValues.isSetVolume = false;
         Application.Quit();
     }
 
