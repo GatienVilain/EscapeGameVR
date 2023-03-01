@@ -44,7 +44,7 @@ public class MusicsManager : MonoBehaviour
 
         if ( !audioSource1.isPlaying && !audioSource2.isPlaying )
         {
-            //Au début du jeu ou si la musique s'arrête pour une raison ou pour une autre (cela ne devrait pas arriver)
+            //Au dï¿½but du jeu ou si la musique s'arrï¿½te pour une raison ou pour une autre (cela ne devrait pas arriver)
             PlayNextMusic();
             scene = currentScene;
         }
@@ -59,7 +59,7 @@ public class MusicsManager : MonoBehaviour
         // Debug feature
         else if( playNextMusic )
         {
-            //Si on veut passer à la prochaine musique
+            //Si on veut passer ï¿½ la prochaine musique
             stopTransition = true;
             stopWaitForEnd = true;
             PlayNextMusic();
@@ -71,7 +71,7 @@ public class MusicsManager : MonoBehaviour
     {
         string currentScene = SceneManager.GetActiveScene().name;
 
-        if(currentScene == "SampleScene")
+        if(currentScene == "SampleScene" || currentScene == "Salle tutoriel")
         {
             musicIndex = (musicIndex + 1) % gamePlaylist.Length;
             AudioClip newMusic = gamePlaylist[musicIndex];
@@ -131,7 +131,7 @@ public class MusicsManager : MonoBehaviour
         float percentage = 0;
         newTrack.clip = newMusic;
 
-        //Si on relance la musique parce que la scene a changé, on n'arrête pas cette transition
+        //Si on relance la musique parce que la scene a changï¿½, on n'arrï¿½te pas cette transition
         stopTransition = false; 
         newTrack.Play();
 
@@ -146,7 +146,7 @@ public class MusicsManager : MonoBehaviour
             }
             else
             {
-                //Si la scene change alors qu'on est dans cette boucle, alors on arrête la coroutine
+                //Si la scene change alors qu'on est dans cette boucle, alors on arrï¿½te la coroutine
                 stopTransition = false;
                 yield break;
             }
