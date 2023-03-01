@@ -85,7 +85,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &2233326985386325014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8083017a802f0488e0cef6079d61ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultVolumeValues: {fileID: 11400000, guid: 6bf8cab62f9e6334b95c93557915867d,
+  defaultVolumeValues: {fileID: 11400000, guid: 9c8eb6798a0ad254cb57f478984de0c3,
     type: 2}
   mainCamera: {fileID: 0}
   timerText: {fileID: 7438841652642395605}

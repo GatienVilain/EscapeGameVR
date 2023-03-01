@@ -30,12 +30,10 @@ public class PlatformController : MonoBehaviour
 
             {
                 numberCorrectCube++;
-                Debug.Log("Add 1 correct cube");
                 if (numberCorrectCube == numberOfPlatform)
                 {
                     Instantiate(arcPrefab, arcPosition, arcRotation);
                     arcDroped = true;
-                    Debug.Log("Drop arc");
                 }
             }
         }
@@ -49,7 +47,6 @@ public class PlatformController : MonoBehaviour
 
             {
                 numberCorrectCube--;
-                Debug.Log("Remove 1 correct cube");
             }
         }
     }

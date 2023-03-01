@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -18,16 +19,20 @@ public class Taillevar : MonoBehaviour
 
     [SerializeField] GameObject tunnelGround;
 
+    [SerializeField] private AudioSource drinkingSound;
+
+    [SerializeField] isSittingScriptableObject isSittingSettings;
+
     private bool bas;
     private bool versbas;
     private bool vershaut;
     private float downPositionY;
     private float originalPositionY;
-
     private bool potionGrabbed = false;
 
     [SerializeField] private Transform rightHand;
     [SerializeField] private Transform leftHand;
+    [SerializeField] private GameObject xrOrigin;
 
 
     [SerializeField] private float sizeDecrementValue = 0.35f;
@@ -39,12 +44,13 @@ public class Taillevar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //transform.position = new Vector3(0f, 1f, 0f);
         bas = false;
         versbas = false;
         vershaut = false;
         originalPositionY = transform.position.y ;
         downPositionY = transform.position.y - sizeDecrementValue;
+        
+        
     }
 
     public void activatePotion()
@@ -60,6 +66,7 @@ public class Taillevar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
 
         if(bas)
         {
@@ -69,9 +76,19 @@ public class Taillevar : MonoBehaviour
 
         if(Input.GetButtonDown("Fire1") && potionGrabbed && !ExitAreaController.isInExitArea)
         {
+            drinkingSound.Play();
+
             if (!(bas))
             {
-                versbas=true;
+                if (!isSittingSettings.isSitting)
+                {
+                    downPositionY = transform.position.y - sizeDecrementValue - 0.35f;
+                }
+                else
+                {
+                    downPositionY = transform.position.y - sizeDecrementValue;
+                }
+                versbas =true;
                 rightReticle.transform.localScale = sizeSmallReticle;
                 leftReticle.transform.localScale = sizeSmallReticle;
                 tunnelGround.GetComponent<TeleportationArea>().enabled = true;

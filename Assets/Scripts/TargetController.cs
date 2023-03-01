@@ -25,7 +25,6 @@ public class TargetController : MonoBehaviour
                 door_ANIM.SetTrigger("TriggerOpenDoor");
                 doorOpenSound.Play();
             }
-            Debug.Log("Cible touch�e");
             
             hasEntered = true;
             

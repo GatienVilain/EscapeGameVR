@@ -73,8 +73,7 @@ public class MusicsManager : MonoBehaviour
     {
         string currentScene = SceneManager.GetActiveScene().name;
 
-        // On joue la musique suivante en fonction de la scene actuelle
-        if(currentScene == "SampleScene")
+        if(currentScene == "SampleScene" || currentScene == "Salle tutoriel")
         {
             // On joue la musique suivante dans la playlist
             musicIndex = (musicIndex + 1) % gamePlaylist.Length;
@@ -89,12 +88,6 @@ public class MusicsManager : MonoBehaviour
         else if(currentScene == "EndMenu")
         {
             StartCoroutine(SoftTransition(endMenuMusic));
-        }
-        else
-        {
-            // Debug: Cas impossible normalement
-            // Si la scene n'est pas reconnue, on affiche un message d'erreur
-            Debug.LogError("Scene non reconnue. Impossible de jouer la musique.");
         }
     }
 
