@@ -36,7 +36,6 @@ public class SettingsMenuController : MonoBehaviour
     {
         if (!isSettingVolume)
         {
-            Debug.Log("SetMainVolume");
             isSettingVolume = true;
             muteToggle.isOn = false;
             isSettingVolume = false;
@@ -48,10 +47,8 @@ public class SettingsMenuController : MonoBehaviour
     {
         if (!isSettingVolume)
         {
-            Debug.Log("CallMute");
             if (muteToggle.isOn)
             {
-                Debug.Log("Mute");
                 // Sauvegarde l’état du volume avant de le couper
                 savedInfoSettings.MainVolume = mainVolumeSlider.value;
                 savedInfoSettings.MuteState = true;
@@ -64,7 +61,6 @@ public class SettingsMenuController : MonoBehaviour
             }
             else
             {
-                Debug.Log("Unmute");
                 savedInfoSettings.MuteState = false;
 
                 // Remet le volume à la valeur sauvegardée
