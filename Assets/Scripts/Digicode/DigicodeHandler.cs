@@ -13,6 +13,7 @@ public class DigicodeHandler : MonoBehaviour
 
     [SerializeField] private AudioSource audioCorrectCode;
     [SerializeField] private AudioSource audioWrongCode;
+    [SerializeField] private AudioSource openPotionTubeSound;
 
     [SerializeField] private Animator dropPotionAnim;
 
@@ -48,6 +49,7 @@ public class DigicodeHandler : MonoBehaviour
             //Code is correct
 
             dropPotionAnim.SetTrigger("TriggerDropPotion");
+            openPotionTubeSound.Play();
         }
         else
         {
