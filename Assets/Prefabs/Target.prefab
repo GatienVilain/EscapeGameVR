@@ -2467,5 +2467,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96345fadfd3f2d34ebda00b04d5c432e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RightDoor: {fileID: 0}
-  LeftDoor: {fileID: 0}
+  door_ANIM: {fileID: 0}
