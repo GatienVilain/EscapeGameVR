@@ -33,7 +33,7 @@ public class SettingsMenuController : MonoBehaviour
     // Change the music volume of the game.
     public void SetMusicVolume(float volume)
     {
-        audioMixer.SetFloat("musicVolume", volume);
+        audioMixer.SetFloat("musicVolume", volume - 10);
     }
 
     // Change the sound volume of the game.
@@ -55,7 +55,7 @@ public class SettingsMenuController : MonoBehaviour
     {
         float volume;
         audioMixer.GetFloat("musicVolume", out volume);
-        musicVolumeSlider.value = volume;
+        musicVolumeSlider.value = volume + 10;
     }
 
     // Gets the main volume value and displays it on the UI

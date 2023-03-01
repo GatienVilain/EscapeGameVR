@@ -17,7 +17,12 @@ public class MainMenuController : MonoBehaviour
 
     void Start()
     {
-        settingsWindow.GetComponent<SettingsMenuController>().SetMainVolume(-35);
+        // Définir les valeurs par défaut des volumes de son.
+        SettingsMenuController audioController = settingsWindow.GetComponent<SettingsMenuController>();
+        audioController.SetMainVolume(-20);
+        audioController.SetMusicVolume(-10);
+        audioController.SetSoundVolume(-10);
+
         // StartCoroutine(SetMenu());
     }
 
