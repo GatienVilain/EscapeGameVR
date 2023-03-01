@@ -64,7 +64,7 @@ public class MainMenuController : MonoBehaviour
 
     public void CloseLevelsWindow()
     {
-        settingsWindow.SetActive(false);
+        levelWindow.SetActive(false);
     }
 
     public void GetSettings()
