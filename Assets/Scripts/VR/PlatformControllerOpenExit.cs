@@ -21,7 +21,6 @@ public class PlatformControllerOpenExit : MonoBehaviour
             if (collision.gameObject.GetComponent<Renderer>().sharedMaterial == this.gameObject.GetComponent<Renderer>().sharedMaterial)
 
             {
-                Debug.Log("Open Exit");
                 exitAnim.SetTrigger("TriggerOpenExit");
                 exitOpen = true;
                 StartCoroutine(PlaySound());
@@ -37,7 +36,6 @@ public class PlatformControllerOpenExit : MonoBehaviour
 
             {
                 exitOpen = false;
-                Debug.Log("Close Exit");
                 exitAnim.SetTrigger("TriggerCloseExit");
                 StartCoroutine(PlaySound());
             }

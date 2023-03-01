@@ -85,11 +85,6 @@ public class MusicsManager : MonoBehaviour
         {
             StartCoroutine(SoftTransition(endMenuMusic));
         }
-        else
-        {
-            //debug***************************
-            Debug.Log("error scene");
-        }
     }
 
     private IEnumerator WaitForEnd(float timeToWait)
