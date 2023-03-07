@@ -27,5 +27,3 @@ Vous trouverez un build du jeu pour Windows, ainsi que le code source du dépôt
 ## Auteurs
 
 Le projet a été réalisé par [Célestin Captal][auteur-cc-ca-url], [Pierre Giraud][auteur-pierre-url], [Dorian Larouziere][auteur-dorian-url], [Rodolphe Maury][auteur-kuriboh-url], [Gatien Vilain][auteur-gatien-url]
-
-<!-- Test -->
